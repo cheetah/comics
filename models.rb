@@ -1,5 +1,11 @@
 %w(rubygems datamapper).each { |lib| require lib }
 
+class DateTime
+  def rfc822
+    self.strftime "%a, %d %b %Y %H:%M:%S %z"
+  end
+end
+
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3:///#{Dir.pwd}/comics.db")
 
 class Comics
@@ -44,8 +50,8 @@ def install
   Comics.new(:title => 'Webcomic', :twitter => 'thcheetah',
               :about => 'Yet another webcomic', :login => 'admin', :password => 'admin').save!
   Strip.new(:title => 'Test Strip', :description => 'Some text here, not except <b>html</b>',
-              :image => '/images/strips/1.png', :created_at => Time.now).save!
+              :image => 'http://localhost:4567/images/strips/1.png', :created_at => Time.now).save!
   sleep 1
   Strip.new(:title => 'Yet Another Test Strip', :description => 'Some text here, not except <b>html</b>',
-              :image => '/images/strips/2.png', :created_at => Time.now).save!
+              :image => 'http://localhost:4567/images/strips/2.png', :created_at => Time.now).save!
 end
