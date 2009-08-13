@@ -1,0 +1,15 @@
+!!! XML
+%rss{ :version => "2.0" }
+	%channel
+		%title= h @comics.title
+		%description= h @comics.about
+		%language ru
+		%pubDate= Time.now 
+		- @strips.each do |strip|
+			%item
+				%title= h strip.title
+				%description
+					%img{ :src => strip.image, :alt => h(strip.title)}
+				%link= url_for "/#{strip.id}"
+				%guid= strip.id
+				%pubDate= strip.created_at

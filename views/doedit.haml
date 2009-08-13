@@ -1,0 +1,22 @@
+#content
+	#text
+		%form{ :name => 'edit', :method => 'post', :action => '/admin/edit'}
+			%fieldset
+				%legend 
+					%span= "Редактировать стрип «#{@strip.title}» или"
+					%a{ :href => '/admin/list' } посмотреть весь список
+					%span или
+					%a{ :href => '/admin/add' } добавить новый
+				%input{ :name => 'id', :type => 'hidden', :value => @strip.id }
+				%label{ :for => 'title' } Название:
+				%input{ :name => 'title', :type => 'text', :value => @strip.title }
+				%br
+				%label{ :for => 'image' } URL изображения:
+				%input{ :name => 'image', :type => 'text', :value => @strip.image }
+				%br
+				%label{ :for => 'description' } Описание (можно использовать html):
+				%textarea{ :name => 'description'}= @strip.description
+				%br
+				%input{ :type => 'submit', :value => 'Редактировать' }
+			%span.backtomain
+				%a{ :href => '/admin' } Вернуться на главную

@@ -1,0 +1,5 @@
+#content
+	#text
+		- @strips.each do |strip|
+			%a{ :href => strip.id }= h strip.title
+			%br
