@@ -47,11 +47,14 @@ end
 def install
   DataMapper.auto_migrate!
   
-  Comics.new(:title => 'Webcomic', :twitter => 'thcheetah',
-              :about => 'Экстраполяция', :login => 'admin', :password => 'admin').save!
-  Strip.new(:title => 'Test Strip', :description => 'Some text here, not except <b>html</b>',
+  Comics.new(:title => 'Зеркало xkcd', :twitter => 'thcheetah',
+              :about => 'Демонстрация возможностей <a href="http://github.com/cheetah/comics" >Comics Engine</a>', :login => 'admin', :password => 'admin').save!
+  Strip.new(:title => 'Экстраполяция', :description => 'К седьмому месяцу в тебе будут сотни детей.',
               :image => 'http://www.xkcd.ru/xkcd_img/xkcd605_.png', :created_at => Time.now).save!
   sleep 1
-  Strip.new(:title => 'Дятел', :description => 'Some text here, not except <b>html</b>',
+  Strip.new(:title => 'Дятел', :description => 'Если у тебя не будет удлинителя, я его тоже смогу принести. Ведь мы же друзья! Правда?',
               :image => 'http://www.xkcd.ru/xkcd_img/xkcd614___.png', :created_at => Time.now).save!
+  sleep 1
+  Strip.new(:title => 'Идиократия', :description => 'Люди не изменятся, хорошо это или плохо. Технология станет круче. В общем, будущее в порядке! За исключением климата; его мы всё-таки просрали.',
+              :image => 'http://www.xkcd.ru/xkcd_img/xkcd_603_idiocracy_ru-4.png', :created_at => Time.now).save!
 end
