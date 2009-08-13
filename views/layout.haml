@@ -1,26 +1,26 @@
 !!!
-%html{ :xmlns => 'http://www.w3.org/1999/xhtml', 'xml:lang' => 'ru', :lang => 'ru' }        
-    %head
-        %title= "#{@comics.title} — #{@strip.title}" rescue @comics.title
-        %meta{ :content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type' }
-        %script{ :type => "text/javascript", :src => "/script.js"}
-        %link{ :rel => 'stylesheet', :href => '/style.css', :type => 'text/css'}
-    %body
-        #header
-            %h1= h @comics.title
-        #navigation
-            %div
-                - tonext = "/#{@strip.next.get_id}" rescue "#"
-                - toprevious = "/#{@strip.previous.get_id}" rescue "#"
-                %a{ :href => toprevious } &lt;—
-                %a{ :href => '/' } Последний
-                %a{ :href => '/list' } По выпускам
-                %a{ :href => '/about' } О комиксе
-                %a{ :href => tonext } —&gt;
-        = yield
-        #footer
-            #info 
-                %span Мой твиттер: 
-                %a{ :href => "http://twitter.com/#{@comics.twitter}" }= "@#{@comics.twitter}"
-                %span= "|"
-                %a{ :href => '/rss.xml' } RSS
+%html{ :xmlns => 'http://www.w3.org/1999/xhtml', 'xml:lang' => 'ru', :lang => 'ru' }    
+  %head
+    %title= "#{@comics.title} — #{@strip.title}" rescue @comics.title
+    %meta{ :content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type' }
+    %script{ :type => "text/javascript", :src => "/script.js"}
+    %link{ :rel => 'stylesheet', :href => '/style.css', :type => 'text/css'}
+  %body
+    #header
+      %h1= h @comics.title
+    #navigation
+      %div
+        - tonext = "/#{@strip.next.get_id}" rescue "#"
+        - toprevious = "/#{@strip.previous.get_id}" rescue "#"
+        %a{ :href => toprevious } &lt;—
+        %a{ :href => '/' } Последний
+        %a{ :href => '/list' } По выпускам
+        %a{ :href => '/about' } О комиксе
+        %a{ :href => tonext } —&gt;
+    = yield
+    #footer
+      #info 
+        %span Мой твиттер: 
+        %a{ :href => "http://twitter.com/#{@comics.twitter}" }= "@#{@comics.twitter}"
+        %span= "|"
+        %a{ :href => '/rss.xml' } RSS

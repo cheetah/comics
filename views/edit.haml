@@ -1,11 +1,11 @@
 #content
-    #text
-        - @strips.each do |strip|
-            %span= h strip.title
-            %a{ :href => "/admin/edit/#{strip.id}" }
-                %img{ :src => '/images/pencil.png', :alt => 'Редактировать' }
-            %a{ :href => "/admin/delete/#{strip.id}", :onclick => "return confirmation();" }
-                %img{ :src => '/images/cross.png', :alt => 'Удалить' }
-            %br
-        %span.backtomain
-            %a{ :href => '/admin' } Вернуться на главную
+  #text
+    - @strips.each do |strip|
+      %span= h strip.title
+      %a{ :href => "/admin/edit/#{strip.id}" }
+        %img{ :src => '/images/pencil.png', :alt => 'Редактировать' }
+      %a{ :href => "/admin/delete/#{strip.id}", :onclick => "return confirmation();" }
+        %img{ :src => '/images/cross.png', :alt => 'Удалить' }
+      %br
+    %span.backtomain
+      %a{ :href => '/admin' } Вернуться на главную
