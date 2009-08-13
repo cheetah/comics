@@ -1,7 +1,7 @@
 #content
   #text
     - @strips.each do |strip|
-      %span= h strip.title
+      %span.strip= h strip.title
       %a{ :href => "/admin/edit/#{strip.id}" }
         %img{ :src => '/images/pencil.png', :alt => 'Редактировать' }
       %a{ :href => "/admin/delete/#{strip.id}", :onclick => "return confirmation();" }

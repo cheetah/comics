@@ -46,6 +46,12 @@ label {
     padding: 0;
     margin-right: 1em;
 }
+span.strip {
+    display: block;
+    float: left;
+    width: 15em;
+    margin-right: 1em;
+}
 span.backtomain {
     font-size: 1.3em;
 }
