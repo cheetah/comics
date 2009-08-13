@@ -1,19 +1,19 @@
 #content
-	#text
-		%form{ :name => 'add', :method => 'post', :action => '/admin/add'}
-			%fieldset
-				%legend 
-					%span Добавить новый стрип или
-					%a{ :href => '/admin/list' } редактировать существующие
-				%label{ :for => 'title' } Название:
-				%input{ :name => 'title', :type => 'text' }
-				%br
-				%label{ :for => 'image' } URL изображения:
-				%input{ :name => 'image', :type => 'text' }
-				%br
-				%label{ :for => 'description' } Описание (можно использовать html):
-				%textarea{ :name => 'description'}
-				%br
-				%input{ :type => 'submit', :value => 'Добавить' }
-		%span.backtomain
-			%a{ :href => '/admin' } Вернуться на главную
+    #text
+        %form{ :name => 'add', :method => 'post', :action => '/admin/add'}
+            %fieldset
+                %legend 
+                    %span Добавить новый стрип или
+                    %a{ :href => '/admin/list' } редактировать существующие
+                %label{ :for => 'title' } Название:
+                %input{ :name => 'title', :type => 'text' }
+                %br
+                %label{ :for => 'image' } URL изображения:
+                %input{ :name => 'image', :type => 'text' }
+                %br
+                %label{ :for => 'description' } Описание (можно использовать html):
+                %textarea{ :name => 'description'}
+                %br
+                %input{ :type => 'submit', :value => 'Добавить' }
+        %span.backtomain
+            %a{ :href => '/admin' } Вернуться на главную
