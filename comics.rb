@@ -113,6 +113,7 @@ get '/about' do
 end
 
 get '/rss.xml' do
+  content_type 'application/rss+xml', :charset => 'utf-8'
   @comics = Comics.first
   @strips = Strip.all :limit => 10
   haml(:rss, :layout => false)
