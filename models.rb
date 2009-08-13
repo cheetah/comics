@@ -48,10 +48,10 @@ def install
   DataMapper.auto_migrate!
   
   Comics.new(:title => 'Webcomic', :twitter => 'thcheetah',
-              :about => 'Yet another webcomic', :login => 'admin', :password => 'admin').save!
+              :about => 'Экстраполяция', :login => 'admin', :password => 'admin').save!
   Strip.new(:title => 'Test Strip', :description => 'Some text here, not except <b>html</b>',
-              :image => 'http://localhost:4567/images/strips/1.png', :created_at => Time.now).save!
+              :image => 'http://www.xkcd.ru/xkcd_img/xkcd605_.png', :created_at => Time.now).save!
   sleep 1
-  Strip.new(:title => 'Yet Another Test Strip', :description => 'Some text here, not except <b>html</b>',
-              :image => 'http://localhost:4567/images/strips/2.png', :created_at => Time.now).save!
+  Strip.new(:title => 'Дятел', :description => 'Some text here, not except <b>html</b>',
+              :image => 'http://www.xkcd.ru/xkcd_img/xkcd614___.png', :created_at => Time.now).save!
 end
