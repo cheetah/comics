@@ -1,4 +1,4 @@
-%w(rubygems sinatra models).each  { |lib| require lib}
+%w(sinatra models).each  { |lib| require lib}
 
 helpers do
   

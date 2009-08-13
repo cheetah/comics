@@ -1,4 +1,4 @@
-%w(rubygems datamapper).each { |lib| require lib }
+require 'datamapper'
 
 class DateTime
   def rfc822
