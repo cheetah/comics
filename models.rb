@@ -24,9 +24,9 @@ class Strip
   include DataMapper::Resource
   
   property :id, Serial
-  property :title, String, :length => 0.255
+  property :title, String, :length => 0..255
   property :description, Text
-  property :image, String, :length => 0.255
+  property :image, String, :length => 0..255
   property :created_at, DateTime
   
   def next
