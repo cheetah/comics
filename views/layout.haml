@@ -12,11 +12,11 @@
       %div
         - tonext = "/#{@strip.next.get_id}" rescue "#"
         - toprevious = "/#{@strip.previous.get_id}" rescue "#"
-        %a{ :href => toprevious } &lt;—
+        %a#PrevLink{ :href => toprevious, :rel => 'prev' } ←
         %a{ :href => '/' } Последний
         %a{ :href => '/list' } По выпускам
         %a{ :href => '/about' } О комиксе
-        %a{ :href => tonext } —&gt;
+        %a#NextLink{ :href => tonext, :rel => 'next' } →
     = yield
     #footer
       #info 
