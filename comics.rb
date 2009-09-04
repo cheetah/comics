@@ -119,6 +119,13 @@ get '/rss.xml' do
   haml(:rss, :layout => false)
 end
 
+get '/atom.xml' do
+  content_type 'application/atom+xml', :charset => 'utf-8'
+  @comics = Comics.first
+  @strips = Strip.all :limit => 10
+  haml(:atom, :layout => false)
+end
+
 ['/', '/index', '/:id'].each do |path|
   get path do
     @comics = Comics.first

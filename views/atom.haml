@@ -1,0 +1,16 @@
+!!! XML
+%feed{ :xmlns => 'http://www.w3.org/2005/Atom', :"xml:lang" => 'ru' }
+  %title= h @comics.title
+  %subtitle{ :type => 'html' }= h @comics.about
+  %link{ :href => url_for('/'), :rel => 'alternate' }
+  %id= url_for '/'
+  %updated= Time.now.xmlschema
+  %author
+    %name= h @comics.twitter
+  - @strips.each do |strip|
+    %entry
+      %title= h strip.title
+      %link{ :href =>  url_for("/#{strip.id}"), :rel => 'alternate' }
+      %id= url_for "/#{strip.id}"
+      %updated= strip.created_at
+      %summary{ :type => 'html' }= "&lt;img src='#{strip.image}' alt='#{h(strip.title)}' /&gt;"
